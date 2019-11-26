@@ -1,1 +1,16 @@
-<p>home-page works!</p>
+<ul class="navigation">
+  <li><a href="#">Home</a></li>
+  <li><a href="#">Produtos</a></li>
+  <li><a href="#">Contato</a></li>
+  <li><a href="#">Bem-vindo, Usuário</a></li>
+</ul>
+<ul class="container wrap">
+  <li class="item" *ngFor="let teste of allProducts">
+    <div>
+      {{ teste.name }}
+    </div>
+    <div>
+      {{ teste.price }}
+    </div>
+  </li>
+</ul>
