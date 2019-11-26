@@ -1,0 +1,26 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Tenis",
+      "price": "200.00"
+    },
+    {
+      "id": 2,
+      "name": "Camiseta",
+      "price": "20.00"
+    },
+    {
+      "id": 3,
+      "name": "Shorts",
+      "price": "40.00"
+    }
+  ],
+  "accounts": [
+    {
+      "id": 1,
+      "email": "guiyribas@gmail.com",
+      "password": "gui123"
+    }
+  ]
+}
