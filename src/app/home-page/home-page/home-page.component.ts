@@ -42,4 +42,8 @@ export class HomePageComponent implements OnInit {
     this.links = !this.links;
   }
 
+  onAddToCartClick(id) {
+    console.log('add ao carrinho ID', id);
+  }
+
 }
