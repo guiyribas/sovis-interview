@@ -14,6 +14,11 @@
       "id": 3,
       "name": "Bermuda Mizuno Master Fitness - Preto",
       "price": "40.00"
+    },
+    {
+      "id": 4,
+      "name": "Camiseta azul 123",
+      "price": "30"
     }
   ],
   "accounts": [

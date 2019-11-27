@@ -9,8 +9,8 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       {
-        path: 'basic-info',
-        loadChildren: () => import('../account/account.module').then(m => m.AccountModule)
+        path: 'produtos',
+        loadChildren: () => import('../products/products.module').then(m => m.ProductsModule)
       }
     ]
   }

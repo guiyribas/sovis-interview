@@ -1,0 +1,25 @@
+<h2>Produtos cadastrados</h2>
+<button [routerLink]="['/dashboard/produtos/novo']" type="button" class="btn btn-secondary btn-lg">
+  + PRODUTO
+</button>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Preço</th>
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of allProducts">
+      <th scope="row">{{ product.id }}</th>
+      <td>{{ product.name }}</td>
+      <td>{{ product.price }}</td>
+      <td>
+        <button type="button" class="btn btn-light" (click)="onEdit(product.id)"><i class="fa fa-edit"></i></button>
+        <button type="button" class="btn btn-light" (click)="onDelete(product.id)"><i class="fa fa-trash"></i></button>
+      </td>
+    </tr>
+  </tbody>
+</table>
