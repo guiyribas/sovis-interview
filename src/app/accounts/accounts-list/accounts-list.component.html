@@ -1,0 +1,25 @@
+<h2>Contas cadastradas</h2>
+<button [routerLink]="['/dashboard/contas/novo']" type="button" class="btn btn-secondary btn-lg">
+  + CONTA
+</button>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Email</th>
+      <th scope="col">Senha</th>
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let account of allAccounts">
+      <th scope="row">{{ account.id }}</th>
+      <td>{{ account.email }}</td>
+      <td>{{ account.password }}</td>
+      <td>
+        <button type="button" class="btn btn-light" (click)="onEdit(account.id)"><i class="fa fa-edit"></i></button>
+        <button type="button" class="btn btn-light" (click)="onDelete(account.id)"><i class="fa fa-trash"></i></button>
+      </td>
+    </tr>
+  </tbody>
+</table>
