@@ -1,3 +1,4 @@
+import { LogoutService } from './../../core/services/logout.service';
 import { ProductsService } from './../../core/services/products.service';
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -12,12 +13,15 @@ export class HomePageComponent implements OnInit {
 
   links: boolean;
   allProducts: Product[];
+  loggedInUser = localStorage.getItem('email');
+  isLogged = false;
 
   constructor(
     private productsService: ProductsService,
     private router: Router,
     private route: ActivatedRoute,
-    private changeDetectorRefs: ChangeDetectorRef
+    private changeDetectorRefs: ChangeDetectorRef,
+    public logoutService: LogoutService
   ) {
     this.links = false;
   }
@@ -28,6 +32,9 @@ export class HomePageComponent implements OnInit {
   }
 
   onRefresh() {
+    if (this.loggedInUser != null) {
+      this.isLogged = true;
+    }
     this.productsService.list().subscribe((res) => {
       console.log('recebo aqui', res);
       console.log('só o nome', res[0].name);
@@ -44,6 +51,10 @@ export class HomePageComponent implements OnInit {
 
   onAddToCartClick(id) {
     console.log('add ao carrinho ID', id);
+  }
+
+  onLogoutClick() {
+    this.logoutService.logout();
   }
 
 }

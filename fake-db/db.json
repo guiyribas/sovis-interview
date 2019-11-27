@@ -26,6 +26,43 @@
       "id": 1,
       "email": "guiyribas@gmail.com",
       "password": "gui12345"
+    },
+    {
+      "id": 2,
+      "email": "root@sovis.com.br",
+      "password": "123321"
+    }
+  ],
+  "login": [
+    {
+      "id": 1,
+      "email": "guiyribas@gmail.com",
+      "password": "gui12345"
+    },
+    {
+      "email": "asdasdas",
+      "password": "dasdasd",
+      "id": 2
+    },
+    {
+      "email": "asdasd",
+      "password": "",
+      "id": 3
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 4
+    },
+    {
+      "email": "asdsad",
+      "password": "",
+      "id": 5
+    },
+    {
+      "email": "",
+      "password": "",
+      "id": 6
     }
   ]
 }
