@@ -1,8 +1,8 @@
-import { LogoutService } from './../../core/services/logout.service';
-import { ProductsService } from './../../core/services/products.service';
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { OnInit, ChangeDetectorRef, Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { ProductsService } from 'src/app/core/services/products.service';
 import { Product } from 'src/app/products/product';
+import { LogoutService } from 'src/app/core/services/logout.service';
 
 @Component({
   selector: 'app-home-page',
@@ -13,8 +13,6 @@ export class HomePageComponent implements OnInit {
 
   links: boolean;
   allProducts: Product[];
-  loggedInUser = localStorage.getItem('email');
-  isLogged = false;
 
   constructor(
     private productsService: ProductsService,
@@ -32,9 +30,6 @@ export class HomePageComponent implements OnInit {
   }
 
   onRefresh() {
-    if (this.loggedInUser != null) {
-      this.isLogged = true;
-    }
     this.productsService.list().subscribe((res) => {
       console.log('recebo aqui', res);
       console.log('só o nome', res[0].name);
@@ -51,10 +46,6 @@ export class HomePageComponent implements OnInit {
 
   onAddToCartClick(id) {
     console.log('add ao carrinho ID', id);
-  }
-
-  onLogoutClick() {
-    this.logoutService.logout();
   }
 
 }

@@ -10,7 +10,7 @@ export class LogoutService {
 
   logout() {
     localStorage.removeItem('email');
-    this.router.navigate(['/login']);
+    // this.router.navigate(['/login']);
   }
 
 }
