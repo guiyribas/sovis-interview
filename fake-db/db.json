@@ -2,7 +2,7 @@
   "products": [
     {
       "id": 1,
-      "name": "Tênis Under Armour Threadborne Slingwrap Masculino - Preto e Branco",
+      "name": "Tênis Under Armour Threadborne Slingwrap Masculino",
       "price": "200.00"
     },
     {
@@ -18,12 +18,12 @@
     {
       "id": 4,
       "name": "Camiseta azul 123",
-      "price": "301"
+      "price": "301.00"
     },
     {
       "id": 5,
-      "name": "asd",
-      "price": "asdasdsad"
+      "name": "Short Branco",
+      "price": "50.50"
     }
   ],
   "accounts": [
