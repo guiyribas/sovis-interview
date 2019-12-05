@@ -10,6 +10,7 @@ import { take, catchError, map } from 'rxjs/operators';
 })
 export class ProductsService {
   private API_URL_PRODUCTS = `${environment.API}products`;
+  private TESTE = `${environment.API}cart`;
 
   constructor(private http: HttpClient) { }
 

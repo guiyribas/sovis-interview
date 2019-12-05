@@ -2,18 +2,21 @@ import { environment } from './../../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { take } from 'rxjs/operators';
+import { Product } from 'src/app/products/product';
 
 @Injectable({
   providedIn: 'root'
 })
+export class CartService {
 
-export class LoginService {
-  private API_URL_LOGIN = `${environment.API}login`;
+  private API_URL_CART = `${environment.API}cart`;
 
   constructor(private http: HttpClient) { }
 
-  // LOGIN
-  public login(record) {
-    return this.http.post(this.API_URL_LOGIN, record).pipe(take(1));
+  // post
+  addOnCart(record: Product) {
+    console.log('record', record);
+    return this.http.post(this.API_URL_CART, record).pipe(take(1));
   }
+
 }

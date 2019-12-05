@@ -35,6 +35,7 @@ export class ProductFormComponent {
 
   ngOnSubmit() {
     this.submitted = true;
+    console.log('form', this.productForm.value);
     this.productsService.save(this.productForm.value).subscribe(
       sucess => {
         this.router.navigate(['/dashboard/produtos']);

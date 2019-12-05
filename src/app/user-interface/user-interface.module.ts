@@ -10,9 +10,11 @@ import { CartComponent } from './cart/cart.component';
 import { CartEmptyComponent } from './cart-empty/cart-empty.component';
 import { CartItemsComponent } from './cart-items/cart-items.component';
 import { CartSummaryComponent } from './cart-summary/cart-summary.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { PaymentMethodsComponent } from './payment-methods/payment-methods.component';
 
 @NgModule({
-  declarations: [HomePageComponent, HeaderUserComponent, CartComponent, CartEmptyComponent, CartItemsComponent, CartSummaryComponent],
+  declarations: [HomePageComponent, HeaderUserComponent, CartComponent, CartEmptyComponent, CartItemsComponent, CartSummaryComponent, CheckoutComponent, PaymentMethodsComponent],
   imports: [
     CommonModule,
     UserInterfaceRoutingModule,

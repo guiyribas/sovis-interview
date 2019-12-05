@@ -1,6 +1,7 @@
+import { CartService } from './../../core/services/cart.service';
+import { ProductsService } from './../../core/services/products.service';
 import { OnInit, ChangeDetectorRef, Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ProductsService } from 'src/app/core/services/products.service';
 import { Product } from 'src/app/products/product';
 import { LogoutService } from 'src/app/core/services/logout.service';
 
@@ -19,7 +20,8 @@ export class HomePageComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private changeDetectorRefs: ChangeDetectorRef,
-    public logoutService: LogoutService
+    public logoutService: LogoutService,
+    public cartService: CartService
   ) {
     this.links = false;
   }
@@ -44,8 +46,9 @@ export class HomePageComponent implements OnInit {
     this.links = !this.links;
   }
 
-  onAddToCartClick(id) {
-    console.log('add ao carrinho ID', id);
+  onAddToCartClick(product) {
+    console.log('add ao carrinho ID', product);
+    this.cartService.addOnCart(product);
   }
 
 }

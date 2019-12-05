@@ -9,14 +9,14 @@
     <div class="horizontal-container wrap">
       <div class="item wrap grow2">
         <p class="card-text">Quantidade:
-          <button type="button" class="btn btn-light"><i class="fa fa-minus"></i></button>
-          <span>1</span>
-          <button type="button" class="btn btn-light"><i class="fa fa-plus"></i></button>
+          <button (click)="ngOnMinusButtonClick()" type="button" class="btn btn-light"><i class="fa fa-minus"></i></button>
+          <span>{{ quantity }}</span>
+          <button (click)="ngOnPlusButtonClick()"  type="button" class="btn btn-light"><i class="fa fa-plus"></i></button>
         </p>
       </div>
       <div class="vertical-container wrap grow1">
           <div class="item wrap grow1">
-            <p class="card-price">R$ 100,00</p>
+            <p class="card-price">R$ {{ totalPrice }}</p>
           </div>
         </div>
     </div>

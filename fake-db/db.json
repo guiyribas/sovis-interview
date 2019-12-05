@@ -18,7 +18,12 @@
     {
       "id": 4,
       "name": "Camiseta azul 123",
-      "price": "30"
+      "price": "301"
+    },
+    {
+      "id": 5,
+      "name": "asd",
+      "price": "asdasdsad"
     }
   ],
   "accounts": [
@@ -35,59 +40,26 @@
   ],
   "login": [
     {
-      "id": 1,
-      "email": "guiyribas@gmail.com",
-      "password": "gui12345"
+      "email": "sadas",
+      "password": "dasdsad",
+      "id": 1
     },
     {
-      "email": "asdasdas",
-      "password": "dasdasd",
+      "email": "asdasdasd",
+      "password": "asdasdsad",
       "id": 2
     },
     {
       "email": "asdasd",
-      "password": "",
-      "id": 3
-    },
-    {
-      "email": "",
-      "password": "",
-      "id": 4
-    },
-    {
-      "email": "asdsad",
-      "password": "",
-      "id": 5
-    },
-    {
-      "email": "",
-      "password": "",
-      "id": 6
-    },
-    {
-      "email": "",
-      "password": "",
-      "id": 7
-    },
-    {
-      "email": "joao@joao.com",
-      "password": "123321",
-      "id": 8
-    },
-    {
-      "email": "asdasdas",
-      "password": "dasdasd",
-      "id": 9
-    },
-    {
-      "email": "asdasd",
       "password": "asdasd",
-      "id": 10
-    },
+      "id": 3
+    }
+  ],
+  "cart": [
     {
-      "email": "guiyribas@gmail.com",
-      "password": "1232131231",
-      "id": 11
+      "id": 1,
+      "name": "teste",
+      "price": "teste"
     }
   ]
 }

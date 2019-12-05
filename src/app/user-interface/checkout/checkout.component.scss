@@ -1,6 +1,3 @@
-.quantity-input {
-  width: 40px;
-}
 .container {
   display: flex;
   flex-direction: column;
@@ -30,12 +27,14 @@
   margin-right: 5px;
 }
 
-.item {
-  margin: 5px;
+.teste {
+  display: inline-table;
 }
 
-.card-price {
-  text-align: right;
+.item {
+  margin: 5px;
+  // padding-right: 20px;
+  // background-color: yellow;
 }
 
 .grow0 {
@@ -55,19 +54,9 @@
   flex-wrap: wrap;
 }
 
-.btn-more-products {
-  font-size: 16px;
-  color: #603E8B;
-  border-width: 2px;
-  border-color: #603E8B;
-  outline: none !important;
-}
-
-.btn-check-out {
-  font-size: 16px;
-  color: white;
-  background-color: #603E8B;
-  border-width: 2px;
-  border-color: #603E8B;
-  outline: none !important;
+.profile-picture {
+  // justify-content: center;
+  // background-color: red;
+  margin-right: 50px;
+  margin-left: auto;
 }

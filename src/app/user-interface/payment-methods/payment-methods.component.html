@@ -1,0 +1,84 @@
+<h3>PAGAMENTO</h3>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Pague com cartão de crédito</h5>
+    <div class="container-fluid py-3">
+      <div class="row">
+        <div>
+          <!-- <div id="pay-invoice" class="card"> -->
+            <!-- <div class="card-body"> -->
+              <hr>
+              <form action="/echo" method="post" novalidate="novalidate" class="needs-validation">
+                <div class="form-group text-center">
+                  <ul class="list-inline">
+                    <li class="list-inline-item"><i class="text-muted fa fa-cc-visa fa-2x"></i></li>
+                    <li class="list-inline-item"><i class="fa fa-cc-mastercard fa-2x"></i></li>
+                    <li class="list-inline-item"><i class="fa fa-cc-amex fa-2x"></i></li>
+                    <li class="list-inline-item"><i class="fa fa-cc-discover fa-2x"></i></li>
+                  </ul>
+                </div>
+
+                <div class="form-group has-success">
+                  <label for="cc-name" class="control-label mb-1">Nome no cartão</label>
+                  <input id="cc-name" name="cc-name" type="text" class="form-control cc-name" required
+                    autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name-error">
+                </div>
+                <div class="form-group">
+                  <label for="cc-number" class="control-label mb-1">Número do cartão</label>
+                  <input id="cc-number" name="cc-number" type="tel" class="form-control cc-number identified visa"
+                    required="" pattern="[0-9]{16}">
+                </div>
+                <div class="row">
+                  <div class="col-6">
+                    <div class="form-group">
+                      <label for="cc-exp" class="control-label mb-1">Data de validade</label>
+                      <input id="cc-exp" name="cc-exp" type="tel" class="form-control cc-exp" required
+                        placeholder="MM / YY" autocomplete="cc-exp">
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <label for="x_card_code" class="control-label mb-1">Código de segurança</label>
+                    <div class="input-group">
+                      <input id="x_card_code" name="x_card_code" type="tel" class="form-control cc-cvc" required
+                        autocomplete="off">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="x_zip" class="control-label mb-1">CEP</label>
+                  <input id="x_zip" name="x_zip" type="text" class="form-control" value="" data-val="true"
+                    data-val-required="Please enter the ZIP/Postal code" autocomplete="postal-code">
+                  <span class="help-block" data-valmsg-for="x_zip" data-valmsg-replace="true"></span>
+                </div>
+              </form>
+            <!-- </div> -->
+          <!-- </div> -->
+        </div>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-light btn-lg btn-block btn-my-purchase">
+      CONCLUIR PEDIDO COM CARTÃO DE CRÉDITO
+    </button>
+  </div>
+</div>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Pague com boleto bancário</h5>
+    <h5 class="card-title bank-slip">R$ 200,00</h5>
+    <p class="card-text">Você poderá visualizar ou imprimir após a finalização do pedido.
+      A data de vencimento é de 2 dias corridos após a conclusão do pedido. Após esta data, ele perderá a validade.</p>
+    <button type="button" class="btn btn-light btn-lg btn-block btn-my-purchase">
+      CONCLUIR PEDIDO COM BOLETO BANCÁRIO
+    </button>
+  </div>
+</div>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Pague com PayPal</h5>
+    <p class="card-text">Após clicar no botão abaixo, você será direcionado ao PayPal para realizar o pagamento.</p>
+    <button type="button" class="btn btn-light btn-lg btn-block btn-my-purchase">
+      CONCLUIR PEDIDO COM PAYPAL
+    </button>
+  </div>
+</div>
