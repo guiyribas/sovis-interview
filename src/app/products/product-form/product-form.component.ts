@@ -29,7 +29,8 @@ export class ProductFormComponent {
     this.productForm = this.fb.group({
       id: [product.id, Validators.required],
       name: [product.name, Validators.required],
-      price: [product.price, Validators.required]
+      price: [product.price, Validators.required],
+      purchaseQuantity: [1]
     });
 
     console.log(this.productForm);

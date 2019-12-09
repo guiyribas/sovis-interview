@@ -1,5 +1,5 @@
 <h3>MEU CARRINHO</h3>
-<div class="card" *ngFor="let items of cartItems" >
+<div class="card" *ngFor="let items of cartItems">
   <div class="card-body">
     <h5 class="card-title">{{ items.name }}</h5>
     <p class="card-text">Ref: # {{ items.id }}</p>
@@ -11,7 +11,7 @@
         <p class="card-text">Quantidade:
           <button (click)="ngOnMinusButtonClick()" type="button" class="btn btn-light"><i
               class="fa fa-minus"></i></button>
-          <span>{{ quantity }}</span>
+          <span>{{ items.purchaseQuantity }}</span>
           <button (click)="ngOnPlusButtonClick()" type="button" class="btn btn-light"><i
               class="fa fa-plus"></i></button>
         </p>

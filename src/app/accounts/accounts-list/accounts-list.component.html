@@ -1,7 +1,15 @@
-<h2>Contas cadastradas</h2>
-<button [routerLink]="['/dashboard/contas/novo']" type="button" class="btn btn-secondary btn-lg">
-  + CONTA
-</button>
+<div class="horizontal-container wrap">
+  <div class="item wrap grow2">
+    <h2>Contas cadastradas</h2>
+  </div>
+  <div class="vertical-container wrap grow1">
+    <div class="item wrap grow1">
+      <button type="button" class="btn btn-dark newButton" [routerLink]="['/dashboard/contas/novo']">
+        CRIAR NOVA CONTA
+      </button>
+    </div>
+  </div>
+</div>
 <table class="table">
   <thead>
     <tr>

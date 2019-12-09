@@ -1,7 +1,6 @@
 <app-header-user></app-header-user>
-<!-- <app-cart-empty></app-cart-empty> -->
-
-<div class="container column-reverse">
+<app-cart-empty *ngIf="!isCartEmpty" ></app-cart-empty>
+<div *ngIf="isCartEmpty"  class="container column-reverse">
   <div class="horizontal-container wrap">
     <div class="item wrap grow2">
       <app-cart-items></app-cart-items>

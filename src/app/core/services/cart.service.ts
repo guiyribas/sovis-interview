@@ -26,7 +26,8 @@ export class CartService {
     itemsLocalStorageCart.push({
       id: record.id,
       name: record.name,
-      price: record.price
+      price: record.price,
+      purchaseQuantity: 1
     });
 
     localStorage.setItem('itemsLocalStorageCart', JSON.stringify(itemsLocalStorageCart));

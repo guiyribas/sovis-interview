@@ -20,7 +20,9 @@ export class ProductResolverGuard implements Resolve<Product> {
     return of({
       id: null,
       name: null,
-      price: null
+      price: null,
+      purchaseQuantity: null,
+      size: null
     });
   }
 }

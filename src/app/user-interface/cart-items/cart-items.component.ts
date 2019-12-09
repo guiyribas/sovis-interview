@@ -17,7 +17,6 @@ export class CartItemsComponent implements OnInit {
     this.quantity = 1;
     this.totalPriceFunc();
     this.cartItems = JSON.parse(localStorage.getItem('itemsLocalStorageCart'));
-    console.log('VEEEM NENEM', this.cartItems);
   }
 
   ngOnPlusButtonClick() {

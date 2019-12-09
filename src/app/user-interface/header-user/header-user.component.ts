@@ -23,6 +23,7 @@ export class HeaderUserComponent implements OnInit {
 
   onLogoutClick() {
     this.logoutService.logout();
+    location.reload();
   }
 
 }

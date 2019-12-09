@@ -1,5 +1,6 @@
+import { AlertModalService } from 'src/app/shared/services/alert-modal.service';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-cart-summary',
@@ -11,19 +12,25 @@ export class CartSummaryComponent implements OnInit {
   totalPrice = 0;
   cartItems;
   totalNumberOfItems = 0;
+  returnUrl: string;
 
   constructor(
-    private router: Router
+    private route: ActivatedRoute,
+    private router: Router,
+    private alertService: AlertModalService
   ) { }
 
   ngOnInit() {
     this.cartItems = JSON.parse(localStorage.getItem('itemsLocalStorageCart'));
-    for (let i = 0; this.cartItems[i]; i++) {
-      let currentItemPrice;
-      currentItemPrice = parseFloat(this.cartItems[i].price);
-      this.totalPrice = this.totalPrice + currentItemPrice;
-      this.totalNumberOfItems++;
+    if (this.cartItems) {
+      for (let i = 0; this.cartItems[i]; i++) {
+        let currentItemPrice;
+        currentItemPrice = parseFloat(this.cartItems[i].price);
+        this.totalPrice = this.totalPrice + currentItemPrice;
+        this.totalNumberOfItems++;
+      }
     }
+    // this.returnUrl = this.route.snapshot.queryParams.returnUrl || '/';
   }
 
   onCheckoutClick() {
@@ -31,7 +38,16 @@ export class CartSummaryComponent implements OnInit {
   }
 
   onDumpCartClick() {
-    localStorage.removeItem('itemsLocalStorageCart');
+    const result$ = this.alertService.showConfirm('Esvaziar carrinho', 'Tem certeza que deseja remover todos os produtos do carrinho?');
+    result$.asObservable()
+      .subscribe(
+        success => {
+          localStorage.removeItem('itemsLocalStorageCart');
+          location.reload();
+        },
+        error => {
+          this.alertService.showAlertDanger('Erro ao esvaziar carrinho. Tente novamente mais tarde.');
+        }
+      );
   }
-
 }
