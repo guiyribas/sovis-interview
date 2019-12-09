@@ -3,11 +3,11 @@
   <div class="container column-reverse card-header">
     <div class="horizontal-container wrap">
       <div class="item wrap grow2">
-        <h6 class="card-title">Subtotal (7 itens)</h6>
+        <h6 *ngIf="totalNumberOfItems"  class="card-title">Subtotal ({{ totalNumberOfItems }} itens)</h6>
       </div>
       <div class="vertical-container wrap grow1">
         <div class="item wrap grow1">
-          <p class="card-price">R$ 100,00</p>
+          <p class="card-price"> {{ totalPrice }}</p>
         </div>
       </div>
     </div>
@@ -17,7 +17,7 @@
       </div>
       <div class="vertical-container wrap grow1">
         <div class="item wrap grow1">
-          <p class="card-price">R$ 10,00</p>
+          <p class="card-price">R$ 0.00</p>
         </div>
       </div>
     </div>
@@ -27,16 +27,19 @@
       </div>
       <div class="vertical-container wrap grow1">
         <div class="item wrap grow1">
-          <p class="card-price">R$ 90,00</p>
+          <p class="card-price"> {{ totalPrice }} </p>
         </div>
       </div>
     </div>
     <div class="horizontal-container wrap">
-      <button (click)="onCheckoutClick()"  type="button" class="btn btn-light btn-lg btn-block btn-check-out">
+      <button (click)="onCheckoutClick()" type="button" class="btn btn-light btn-lg btn-block btn-check-out">
         FINALIZAR COMPRA
       </button>
       <button [routerLink]="['/']" type="button" class="btn btn-light btn-lg btn-block btn-more-products">
         ESCOLHER MAIS PRODUTOS
+      </button>
+      <button (click)="onDumpCartClick()" type="button" class="btn btn-light btn-lg btn-block btn-dump-cart">
+        ESVAZIAR CARRINHO
       </button>
     </div>
   </div>

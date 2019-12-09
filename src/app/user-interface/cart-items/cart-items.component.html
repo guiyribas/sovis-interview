@@ -1,8 +1,8 @@
 <h3>MEU CARRINHO</h3>
-<div class="card">
+<div class="card" *ngFor="let items of cartItems" >
   <div class="card-body">
-    <h5 class="card-title">Bermuda Mizuno Energy Long Masculina</h5>
-    <p class="card-text">Ref: # D16-3027-006-03</p>
+    <h5 class="card-title">{{ items.name }}</h5>
+    <p class="card-text">Ref: # {{ items.id }}</p>
     <p class="card-text">Vendido e entregue por Sovis</p>
   </div>
   <div class="container column-reverse card-header">
@@ -18,7 +18,7 @@
       </div>
       <div class="vertical-container wrap grow1">
         <div class="item wrap grow1">
-          <p class="card-price">R$ {{ totalPrice }}</p>
+          <p class="card-price">R$ {{ items.price }}</p>
         </div>
       </div>
     </div>

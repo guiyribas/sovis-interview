@@ -1,3 +1,4 @@
+import { AlertModalService } from './../../shared/services/alert-modal.service';
 import { CartService } from './../../core/services/cart.service';
 import { ProductsService } from './../../core/services/products.service';
 import { OnInit, ChangeDetectorRef, Component } from '@angular/core';
@@ -21,7 +22,8 @@ export class HomePageComponent implements OnInit {
     private route: ActivatedRoute,
     private changeDetectorRefs: ChangeDetectorRef,
     public logoutService: LogoutService,
-    public cartService: CartService
+    public cartService: CartService,
+    private modal: AlertModalService
   ) {
     this.links = false;
   }
@@ -47,8 +49,12 @@ export class HomePageComponent implements OnInit {
   }
 
   onAddToCartClick(product) {
-    console.log('add ao carrinho ID', product);
+    const msgSuccess = 'Produto adicionado ao carrinho';
+    const msgError = 'Erro ao adicionar produto ao carrinho, tente novamente!';
+
+    console.log('add ao carrinho ID', product.id);
     this.cartService.addOnCart(product);
+    this.modal.showAlertSuccess(msgSuccess);
   }
 
 }

@@ -1,3 +1,4 @@
+import { AlertModalService } from './../../shared/services/alert-modal.service';
 import { ProductsService } from './../../core/services/products.service';
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -19,7 +20,8 @@ export class ProductFormComponent {
     private fb: FormBuilder,
     private router: Router,
     private route: ActivatedRoute,
-    private productsService: ProductsService
+    private productsService: ProductsService,
+    private modal: AlertModalService
   ) {
 
     const product = this.route.snapshot.data.product;
@@ -35,15 +37,24 @@ export class ProductFormComponent {
 
   ngOnSubmit() {
     this.submitted = true;
-    console.log('form', this.productForm.value);
+
+    let msgSuccess = 'Produto criado com sucesso';
+    let msgError = 'Erro ao criar produto, tente novamente!';
+    if (this.productForm.value.id) {
+      msgSuccess = 'Produto editado com sucesso';
+      msgError = 'Erro ao editar produto, tente novamente!';
+    }
     this.productsService.save(this.productForm.value).subscribe(
       sucess => {
+        this.modal.showAlertSuccess(msgSuccess);
         this.router.navigate(['/dashboard/produtos']);
       },
       error => {
+        this.modal.showAlertDanger(msgError);
         console.log('error', error);
       }
     );
+
   }
 
   ngOnCancel() {

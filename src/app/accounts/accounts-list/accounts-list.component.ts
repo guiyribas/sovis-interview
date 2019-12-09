@@ -1,7 +1,10 @@
+import { AlertModalService } from 'src/app/shared/services/alert-modal.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AccountsService } from './../../core/services/accounts.service';
 import { Account } from 'src/app/accounts/account';
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { take, switchMap } from 'rxjs/operators';
+import { EMPTY } from 'rxjs';
 
 @Component({
   selector: 'app-accounts-list',
@@ -17,7 +20,8 @@ export class AccountsListComponent implements OnInit {
     private accountsService: AccountsService,
     private changeDetectorRefs: ChangeDetectorRef,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private alertService: AlertModalService
   ) { }
 
   ngOnInit() {
@@ -37,11 +41,21 @@ export class AccountsListComponent implements OnInit {
   }
 
   onDelete(account) {
-    this.accountsService.remove(account).subscribe(
-      (response) => {
-        this.onRefresh();
-      }
-    );
+    const result$ = this.alertService.showConfirm('Exclusão de conta', 'Tem certeza que deseja remover essa conta?');
+    result$.asObservable()
+      .pipe(
+        take(1),
+        switchMap(result => result ? this.accountsService.remove(account) : EMPTY)
+      )
+      .subscribe(
+        success => {
+          this.onRefresh();
+        },
+        error => {
+          this.alertService.showAlertDanger('Erro ao remover conta. Tente novamente mais tarde.');
+        }
+      );
+
   }
 
 }

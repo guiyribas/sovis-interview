@@ -1,3 +1,4 @@
+import { AlertModalService } from './../../shared/services/alert-modal.service';
 import { AccountsService } from './../../core/services/accounts.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Component } from '@angular/core';
@@ -19,7 +20,8 @@ export class AccountFormComponent {
     private fb: FormBuilder,
     private router: Router,
     private route: ActivatedRoute,
-    private accountsService: AccountsService
+    private accountsService: AccountsService,
+    private modal: AlertModalService
   ) {
 
     const account = this.route.snapshot.data.account;
@@ -35,11 +37,21 @@ export class AccountFormComponent {
 
   ngOnSubmit() {
     this.submitted = true;
+
+    let msgSuccess = 'Conta criada com sucesso';
+    let msgError = 'Erro ao criar conta, tente novamente!';
+    if (this.accountForm.value.id) {
+      msgSuccess = 'Conta editada com sucesso';
+      msgError = 'Erro ao editar conta, tente novamente!';
+    }
+
     this.accountsService.save(this.accountForm.value).subscribe(
       sucess => {
+        this.modal.showAlertSuccess(msgSuccess);
         this.router.navigate(['/dashboard/contas']);
       },
       error => {
+        this.modal.showAlertDanger(msgError);
         console.log('error', error);
       }
     );

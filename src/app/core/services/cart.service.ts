@@ -11,12 +11,29 @@ export class CartService {
 
   private API_URL_CART = `${environment.API}cart`;
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
   // post
   addOnCart(record: Product) {
-    console.log('record', record);
-    return this.http.post(this.API_URL_CART, record).pipe(take(1));
+    let itemsLocalStorageCart = new Array();
+
+    if (localStorage.hasOwnProperty('itemsLocalStorageCart')) {
+      itemsLocalStorageCart = JSON.parse(localStorage.getItem('itemsLocalStorageCart'));
+    }
+
+    itemsLocalStorageCart.push({
+      id: record.id,
+      name: record.name,
+      price: record.price
+    });
+
+    localStorage.setItem('itemsLocalStorageCart', JSON.stringify(itemsLocalStorageCart));
+
+    console.log('array items local storage', itemsLocalStorageCart);
+
+    // return this.http.post(this.API_URL_CART, record).pipe(take(1));
   }
 
 }

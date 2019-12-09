@@ -8,13 +8,16 @@ import { Component, OnInit } from '@angular/core';
 export class CartItemsComponent implements OnInit {
 
   quantity: number;
-  totalPrice: number;
+  totalPrice = 0;
+  cartItems;
 
   constructor() { }
 
   ngOnInit() {
     this.quantity = 1;
     this.totalPriceFunc();
+    this.cartItems = JSON.parse(localStorage.getItem('itemsLocalStorageCart'));
+    console.log('VEEEM NENEM', this.cartItems);
   }
 
   ngOnPlusButtonClick() {
@@ -33,7 +36,7 @@ export class CartItemsComponent implements OnInit {
   }
 
   totalPriceFunc() {
-    this.totalPrice = this.quantity * 100;
+    // this.totalPrice = this.quantity * 100;
   }
 
 }
