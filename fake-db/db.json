@@ -41,59 +41,14 @@
   ],
   "login": [
     {
-      "email": "asdasdsad",
-      "password": "asdsad",
+      "email": "asdasd",
+      "password": "asdasd",
       "id": 1
     },
     {
-      "email": "sadsa",
-      "password": "dasdsad",
+      "email": "asdasd",
+      "password": "asdasd",
       "id": 2
-    },
-    {
-      "email": "asdsad",
-      "password": "asdsad",
-      "id": 3
-    },
-    {
-      "email": "sadasd",
-      "password": "asdsad",
-      "id": 4
-    },
-    {
-      "email": "guiyribas@gmail.com",
-      "password": "sad",
-      "id": 5
-    },
-    {
-      "email": "teste",
-      "password": "teste",
-      "id": 6
-    },
-    {
-      "email": "asdasd",
-      "password": "asdsad",
-      "id": 7
-    },
-    {
-      "email": "asdasd",
-      "password": "asdasd",
-      "id": 8
-    },
-    {
-      "email": "sadsad",
-      "password": "asdsad",
-      "id": 9
-    },
-    {
-      "email": "asdasd",
-      "password": "asdasd",
-      "id": 10
-    },
-    {
-      "email": "teste",
-      "password": "teste",
-      "id": 11
     }
   ],
   "cart": [

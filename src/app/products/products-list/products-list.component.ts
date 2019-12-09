@@ -1,4 +1,4 @@
-import { ProductsService } from './../../core/services/products.service';
+import { ProductsService } from 'src/app/shared/services/products.service';
 import { Component, OnInit, ChangeDetectorRef, ViewChild } from '@angular/core';
 import { Product } from '../product';
 import { Router, ActivatedRoute } from '@angular/router';

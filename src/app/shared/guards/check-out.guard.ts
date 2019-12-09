@@ -1,4 +1,4 @@
-import { LogoutService } from 'src/app/core/services/logout.service';
+import { LogoutService } from 'src/app/shared/services/logout.service';
 import { Injectable } from '@angular/core';
 import { CanActivate, Router, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
 import { AuthService } from '../services/auth.service';

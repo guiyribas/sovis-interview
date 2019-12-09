@@ -1,8 +1,8 @@
 import { AlertModalService } from './../../shared/services/alert-modal.service';
-import { AccountsService } from './../../core/services/accounts.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Component } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { AccountsService } from 'src/app/shared/services/accounts.service';
 
 @Component({
   selector: 'app-account-form',

@@ -12,9 +12,10 @@ import { CartItemsComponent } from './cart-items/cart-items.component';
 import { CartSummaryComponent } from './cart-summary/cart-summary.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { PaymentMethodsComponent } from './payment-methods/payment-methods.component';
+import { ThanksComponent } from './thanks/thanks.component';
 
 @NgModule({
-  declarations: [HomePageComponent, HeaderUserComponent, CartComponent, CartEmptyComponent, CartItemsComponent, CartSummaryComponent, CheckoutComponent, PaymentMethodsComponent],
+  declarations: [HomePageComponent, HeaderUserComponent, CartComponent, CartEmptyComponent, CartItemsComponent, CartSummaryComponent, CheckoutComponent, PaymentMethodsComponent, ThanksComponent],
   imports: [
     CommonModule,
     UserInterfaceRoutingModule,

@@ -1,4 +1,4 @@
-import { LogoutService } from './../../core/services/logout.service';
+import { LogoutService } from 'src/app/shared/services/logout.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

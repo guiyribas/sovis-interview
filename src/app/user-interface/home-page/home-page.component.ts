@@ -1,10 +1,10 @@
 import { AlertModalService } from './../../shared/services/alert-modal.service';
-import { CartService } from './../../core/services/cart.service';
-import { ProductsService } from './../../core/services/products.service';
+import { CartService } from 'src/app/shared/services/cart.service';
+import { ProductsService } from 'src/app/shared/services/products.service';
 import { OnInit, ChangeDetectorRef, Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/products/product';
-import { LogoutService } from 'src/app/core/services/logout.service';
+import { LogoutService } from 'src/app/shared/services/logout.service';
 
 @Component({
   selector: 'app-home-page',

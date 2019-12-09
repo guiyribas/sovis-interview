@@ -2,8 +2,8 @@ import { environment } from './../../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { Product } from 'src/app/products/product';
 import { take, catchError, map } from 'rxjs/operators';
+import { Product } from 'src/app/products/product';
 
 @Injectable({
   providedIn: 'root'

@@ -1,4 +1,4 @@
-import { ProductsService } from './../../core/services/products.service';
+import { ProductsService } from 'src/app/shared/services/products.service';
 import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable, of } from 'rxjs';

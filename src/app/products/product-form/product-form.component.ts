@@ -1,5 +1,5 @@
 import { AlertModalService } from './../../shared/services/alert-modal.service';
-import { ProductsService } from './../../core/services/products.service';
+import { ProductsService } from 'src/app/shared/services/products.service';
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';

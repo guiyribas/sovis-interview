@@ -1,10 +1,10 @@
 import { AlertModalService } from 'src/app/shared/services/alert-modal.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AccountsService } from './../../core/services/accounts.service';
 import { Account } from 'src/app/accounts/account';
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { take, switchMap } from 'rxjs/operators';
 import { EMPTY } from 'rxjs';
+import { AccountsService } from 'src/app/shared/services/accounts.service';
 
 @Component({
   selector: 'app-accounts-list',

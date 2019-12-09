@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-payment-methods',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaymentMethodsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  completeOrder() {
+    localStorage.removeItem('itemsLocalStorageCart');
+    this.router.navigate(['/obrigado-pela-preferencia']);
   }
 
 }
